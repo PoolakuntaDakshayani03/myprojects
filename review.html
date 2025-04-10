@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .rating {
+            color: gold;
+        }
+        button {
+            background: #ff5e62;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e04b50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internship Reviews</h1>
+        <h3>Add a Review</h3>
+        <form id="reviewSubmitForm">
+            <label for="studentName">Your Name:</label><br>
+            <input type="text" id="studentName" required><br><br>
+            
+            <label for="rating">Rating (1-5):</label><br>
+            <input type="number" id="rating" min="1" max="5" required><br><br>
+            
+            <label for="Suggestions">Suggestions:</label><br>
+            <textarea id="Suggestions" rows="4" required></textarea><br><br>
+            
+            <button type="submit">Submit Review</button>
+        </form>
+        
+        <h3>Existing Reviews</h3>
+        <div id="reviews"></div>
+    </div>
+    
+    <script>
+        document.getElementById('reviewSubmitForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const studentName = document.getElementById('studentName').value.trim();
+            const rating = parseInt(document.getElementById('rating').value);
+            const suggestions = document.getElementById('Suggestions').value.trim();
+            
+            if (!studentName || !suggestions || isNaN(rating) || rating < 1 || rating > 5) {
+                alert("Please fill all fields correctly.");
+                return;
+            }
+            
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('review');
+            
+            const ratingStars = '<span class="rating">' + '★'.repeat(rating) + '</span>';
+            
+            reviewDiv.innerHTML = `
+                <h4>${studentName} - ${ratingStars}</h4>
+                <p>${suggestions}</p>
+                <p><small>Date: ${new Date().toLocaleDateString()}</small></p>
+            `;
+            
+            document.getElementById('reviews').prepend(reviewDiv);
+            
+            // Clear the form
+            document.getElementById('reviewSubmitForm').reset();
+        });
+    </script>
+</body>
+</html>

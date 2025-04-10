@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Internship Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('W.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            color: blue;
+            padding: 20px;
+            font-size: 24px;
+        }
+        main {
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+            color: purple;
+        }
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Internship Platform</h1>
+    </header>
+    <main>
+        <section id="student-profile-form">
+            <h2 style="color: purple; text-align: center;">Create Student Account</h2>
+            <form action="/submit-profile" method="POST">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="student-name">Full Name:</label>
+                    <input type="text" id="student-name" name="student-name" required>
+                    
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="college">College/University:</label>
+                    <input type="text" id="college" name="college" required>
+                    
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Skills</legend>
+                    <label>Select Skills:</label>
+                    <input type="checkbox" id="html" name="skills" value="HTML"> HTML<br>
+                    <input type="checkbox" id="css" name="skills" value="CSS"> CSS<br>
+                    <input type="checkbox" id="javascript" name="skills" value="JavaScript"> JavaScript<br>
+                    <input type="checkbox" id="python" name="skills" value="Python"> Python<br>
+                    <input type="checkbox" id="java" name="skills" value="Java"> Java<br>
+                    
+                    <label for="other-skills">Other Skills:</label>
+                    <input type="text" id="other-skills" name="other-skills">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Internship Preferences</legend>
+                    <label for="internship-type">Preferred Internship Type:</label>
+                    <select id="internship-type" name="internship-type">
+                        <option value="remote">Remote</option>
+                        <option value="on-site">On-site</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+
+                    <label for="industry">Preferred Industry:</label>
+                    <select id="industry" name="industry">
+                        <option value="technology">Technology</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                    </select>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>

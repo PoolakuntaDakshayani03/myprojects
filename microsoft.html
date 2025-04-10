@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Listings</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        .search-box { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; }
+        .internship { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; }
+        .internship a { color: blue; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Internship</h1>
+        <input type="text" id="searchBox" class="search-box" placeholder="Search internships..." onkeyup="filterInternships()">
+        <div id="internshipList">
+            <div class="internship" data-title="Software Engineering Intern">
+                <h2>python developer Intern</h2>
+                <p>microsoft - Remote (3 months)</p>
+                <a href="/Users/DAKSHAYANI/Documents/tarang2k25/tarang25_hk_t9\PD.html"> View Details</a>
+            </div>
+            <div class="internship" data-title="Data Science Intern">
+                <h2>java developer Intern</h2>
+                <p>microsoft- On-Site (2 months)</p>
+                <a href="/Users/DAKSHAYANI/Documents/tarang2k25/tarang25_hk_t9\Java Developer.html"> View Details</a>
+            </div>
+            <div class="internship" data-title="Marketing Intern">
+                <h2>cyber security Intern</h2>
+                <p>microsoft - Hybrid (6 months)</p>
+                <a href="/Users/DAKSHAYANI/Documents/tarang2k25/tarang25_hk_t9\cyber security.html"> View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterInternships() {
+            let input = document.getElementById('searchBox').value.toLowerCase();
+            let internships = document.querySelectorAll('.internship');
+            
+            internships.forEach(internship => {
+                let title = internship.getAttribute('data-title').toLowerCase();
+                internship.style.display = title.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>

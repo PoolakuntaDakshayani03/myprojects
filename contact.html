@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | InternConnect</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .contact-intro {
+            text-align: center;
+            padding: 40px 0;
+            background-color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .info-item {
+            margin-bottom: 25px;
+        }
+        .info-item h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .info-item h3 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .faq-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .faq-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our internship team for any questions or support</p>
+        </div>
+    </header>
+
+    <section class="contact-intro">
+        <div class="container">
+            <h2>We're Here to Help</h2>
+            <p>Whether you're a student looking for internship opportunities or a company wanting to list your internships, our team is ready to assist you.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="contact-grid">
+            <section class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="internshipContactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="internship-application">Internship Application</option>
+                            <option value="company-partnership">Company Partnership</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="general-question">General Question</option>
+                            <option value="feedback">Feedback/Suggestions</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </section>
+
+            <section class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="info-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Our Office</h3>
+                    <p>InternConnect Headquarters<br>
+                    123 Career Lane, Suite 400<br>
+                    San Francisco, CA 94107</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-envelope"></i> Email Us</h3>
+                    <p>General Inquiries: <a href="mailto:info@internconnect.com">info@internconnect.com</a><br>
+                    Student Support: <a href="mailto:students@internconnect.com">students@internconnect.com</a><br>
+                    Employer Services: <a href="mailto:employers@internconnect.com">employers@internconnect.com</a></p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-phone-alt"></i> Call Us</h3>
+                    <p>Main Office: (415) 555-1234<br>
+                    Student Support: (415) 555-5678<br>
+                    Employer Services: (415) 555-9012</p>
+                    <p><em>Monday-Friday, 9am-5pm PST</em></p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-calendar-alt"></i> Schedule a Call</h3>
+                    <p>Prefer to schedule a consultation? <a href="#">Book a time</a> with our internship advisors.</p>
+                </div>
+            </section>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I apply for internships through your platform?</h3>
+                <p>Create a student account on our website, complete your profile, and browse available internships. When you find opportunities that match your interests, click "Apply" and follow the application instructions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What should I do if I'm having technical issues with my application?</h3>
+                <p>Please contact our technical support team at <a href="mailto:support@internconnect.com">support@internconnect.com</a> or call (415) 555-1234. Be sure to include screenshots of any error messages you're receiving.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can my company list internship opportunities on your site?</h3>
+                <p>Companies should register for an employer account and complete the verification process. Once approved, you can post internship opportunities through your employer dashboard. For large organizations needing multiple postings, contact our employer services team.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a fee for students to use your platform?</h3>
+                <p>No, our platform is completely free for students to search and apply for internships. We generate revenue through employer partnerships and premium services for companies.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Connect with us on social media for the latest internship opportunities and career advice</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2023 InternConnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('internshipContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your message! Our team will get back to you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
